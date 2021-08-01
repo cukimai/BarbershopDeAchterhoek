@@ -18,20 +18,44 @@
                 prijs: '',
                 knippen: [
                     {
-                        name: 'Knippen, föhnen, stijlen',
+                        name: 'Knippen',
+                        prijs: 18,
+                    },
+                    {
+                        name: 'Knippen Zero Fade',
                         prijs: 20,
-                        fat: 6.0,
-                        carbs: 24,
-                        protein: 4.0,
-                        iron: '1%',
                     },
                     {
                         name: 'Knippen t/m 10 jaar',
                         prijs: 15,
                     },
                     {
-                        name: 'Baard / Bijwerken of scheren',
-                        prijs: 13,
+                        name: 'Baard scheren',
+                        prijs: 12,
+                    },
+                    {
+                        name: 'Baard bewerken',
+                        prijs: 12,
+                    },
+                    {
+                        name: 'Contouren',
+                        prijs: 5,
+                    },
+                    {
+                        name: 'Wassen',
+                        prijs: 4,
+                    },
+                    {
+                        name: 'Harsen neus & oorharen',
+                        prijs: 5,
+                    },
+                    {
+                        name: 'Haren, wangen & wenkbrawuen',
+                        prijs: 5,
+                    },
+                    {
+                        name: 'Gezichtsmasker met stoom',
+                        prijs: 12,
                     },
                 ],
             }

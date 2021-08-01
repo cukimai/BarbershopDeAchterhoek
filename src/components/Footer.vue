@@ -19,7 +19,7 @@
 			</v-card-title>
 
 			<v-card-text class="py-2 white--text text-center">
-				{{ new Date().getFullYear() }} — <strong>Barbershopdeschaar.nl</strong> Made by <strong>Tom</strong>
+				{{ new Date().getFullYear() }} — <strong>Barbershopdeschaar.nl</strong>
 			</v-card-text>
 		</v-card>
 	</v-footer>
