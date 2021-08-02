@@ -10,7 +10,7 @@
 		>
 
 			<v-card-text class="py-2 green lighten-1 white--text text-center">
-				{{ new Date().getFullYear() }} — <strong>Barbershopdeschaar.nl</strong>
+				{{ new Date().getFullYear() }} — <strong>Barbershopdeachterhoek.nl</strong>
 			</v-card-text>
 		</v-card>
 	</v-footer>
