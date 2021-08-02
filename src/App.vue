@@ -77,24 +77,19 @@ export default {
 			}
 		},
 	},
-  name: 'App',
-
   components: {
   },
-
-
   data: () => ({
 	 drawer: null,
       items: [
           { title: 'Home', icon: 'mdi-view-dashboard',to:'/', },
           { title: 'Prijzen', icon: 'mdi-currency-eur',to:'/prijzen', },
 		  { title: 'Fotos', icon: 'mdi-camera',to:'/fotos', },
-		  // { title: 'Over ons', icon: 'mdi-information-outline',to:'/About', },
           { title: 'Contact', icon: 'mdi-map-marker',to:'/contact', },
       ],
 	  headerIcons: [
 		  { icon:'mdi-phone',link:'tel:0611263861'},
-		  { icon:'mdi-whatsapp',link:'https://api.whatsapp.com/send?phone=0634016976'},
+		  { icon:'mdi-whatsapp',link:'https://api.whatsapp.com/send?phone=0611263861'},
 		  { icon:'mdi-facebook',link:'https://www.facebook.com/Barbershop-De-Achterhoek-109519520965648'},
 		  { icon:'mdi-instagram',link:'https://www.instagram.com/barbershopdeachterhoek/?hl=nl'},
 	  ],
