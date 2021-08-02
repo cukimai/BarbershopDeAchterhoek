@@ -1,5 +1,5 @@
 <template>
-	<v-container class="mt-16">
+	<v-container>
 		<v-row>
 			<v-col>	<PriceTable></PriceTable></v-col>
 		</v-row>

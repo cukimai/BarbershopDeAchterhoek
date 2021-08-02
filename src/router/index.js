@@ -17,9 +17,9 @@ const routes = [
         component: () => import('../views/Prijzen.vue')
     },
     {
-        path: '/Galerij',
-        name: 'Galerij',
-        component: () => import('../views/Galerij.vue')
+        path: '/Fotos',
+        name: 'fotos',
+        component: () => import('../views/fotos.vue')
     },
     {
         path: '/Contact',

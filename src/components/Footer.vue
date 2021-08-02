@@ -8,17 +8,8 @@
 				flat
 				tile
 		>
-			<v-card-title class="green lighten-1">
-				<strong class="subheading text-body-2 text-md-h6">Blijf op de hoogte met onze social media accounts!</strong>
 
-				<v-spacer></v-spacer>
-
-					<v-btn icon v-for="i in headerIcons" :href="i.link">
-						<v-icon>{{i.icon}}</v-icon>
-					</v-btn>
-			</v-card-title>
-
-			<v-card-text class="py-2 white--text text-center">
+			<v-card-text class="py-2 green lighten-1 white--text text-center">
 				{{ new Date().getFullYear() }} — <strong>Barbershopdeschaar.nl</strong>
 			</v-card-text>
 		</v-card>

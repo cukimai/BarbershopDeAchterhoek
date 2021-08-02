@@ -1,6 +1,6 @@
 <template>
 	<v-app id="inspire">
-		<v-navigation-drawer app v-model="drawer" dark color="green darken-4">
+		<v-navigation-drawer app v-model="drawer" dark color="green darken-2">
 			<v-list-item>
 				<v-list-item-content>
 					<v-list-item-title class="title">
@@ -78,10 +78,10 @@ export default {
 	 drawer: null,
       items: [
           { title: 'Home', icon: 'mdi-view-dashboard',to:'/', },
-          { title: 'Prijzen', icon: 'mdi-currency-eur',to:'/Prijzen', },
-		  { title: 'Galerij', icon: 'mdi-camera',to:'/Galerij', },
-		  { title: 'Over ons', icon: 'mdi-information-outline',to:'/About', },
-          { title: 'Contact', icon: 'mdi-map-marker',to:'/Contact', },
+          { title: 'Prijzen', icon: 'mdi-currency-eur',to:'/prijzen', },
+		  { title: 'Fotos', icon: 'mdi-camera',to:'/fotos', },
+		  // { title: 'Over ons', icon: 'mdi-information-outline',to:'/About', },
+          { title: 'Contact', icon: 'mdi-map-marker',to:'/contact', },
       ],
 	  headerIcons: [
 		  { icon:'mdi-phone',link:'tel:0611263861'},

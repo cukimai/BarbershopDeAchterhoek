@@ -1,5 +1,5 @@
 <template>
-  <v-carousel height="550" v-model="model">
+  <v-carousel height="550">
     <v-carousel-item
         :src="require('../../assets/crs1.webp')"
     >
@@ -36,8 +36,11 @@
 </template>
 
 <script>
-export default {
-  name: "CarousselIntro"
+  export default {
+  name: "CarousselIntro",
+  data: () => ({
+
+}),
 }
 </script>
 
