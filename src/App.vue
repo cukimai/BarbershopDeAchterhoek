@@ -52,7 +52,16 @@
 		</v-app-bar>
 
 		<v-main>
-			<router-view></router-view>
+      <v-lazy
+          v-model="isActive"
+          :options="{
+          threshold: .5
+        }"
+          min-height="200"
+          transition="fade-transition"
+      >
+        <router-view></router-view>
+      </v-lazy>
 		</v-main>
 	</v-app>
 </template>

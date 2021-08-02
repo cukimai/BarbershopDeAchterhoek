@@ -70,7 +70,7 @@
                         value: 'name',
                     },
                     {
-                        text: 'Prijzen',
+                        text: 'Prijs',
                         value: 'prijs',
                         filter: value => {
                             if (!this.prijs) return true
