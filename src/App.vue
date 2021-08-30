@@ -34,6 +34,7 @@
 
 		<v-app-bar app color="green lighten-1" dark>
 			<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+			<router-link to="/" class="logoHp">
 		<v-img
 				:style="height"
 				height="80"
@@ -44,6 +45,7 @@
 				width="100"
 		>
 		</v-img>
+			</router-link>
 			<v-spacer></v-spacer>
 
 			<v-btn icon v-for="i in headerIcons" :href="i.link">
@@ -66,7 +68,18 @@
 	</v-app>
 </template>
 
-
+<style>
+	.logoHp {
+		display: contents;
+	}
+	@media screen and (max-width:800px) {
+		.logoHp {
+			display: flex;
+			width: 135px;
+			height: 100px;
+		}
+	}
+</style>
 <script>
 
 export default {
@@ -89,7 +102,7 @@ export default {
       ],
 	  headerIcons: [
 		  { icon:'mdi-phone',link:'tel:+310611263861'},
-		  { icon:'mdi-whatsapp',link:'https://api.whatsapp.com/send?phone=0611263861'},
+		  { icon:'mdi-whatsapp',link:'https://api.whatsapp.com/send?phone=+310611263861'},
 		  { icon:'mdi-facebook',link:'https://www.facebook.com/Barbershop-De-Achterhoek-109519520965648'},
 		  { icon:'mdi-instagram',link:'https://www.instagram.com/barbershopdeachterhoek/?hl=nl'},
 	  ],
