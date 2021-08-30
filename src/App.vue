@@ -72,7 +72,7 @@
 	.logoHp {
 		display: contents;
 	}
-	@media screen and (max-width:800px) {
+	@media screen and (max-width:600px) {
 		.logoHp {
 			display: flex;
 			width: 135px;
