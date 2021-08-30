@@ -1,5 +1,6 @@
 <template>
   <div class="text-center py-5">
+    <a class="text-decoration-none" href="https://g.page/r/Cc85aAd4aX7pEAg/review">
     <v-rating
         v-model="rating"
         background-color="black lighten-3"
@@ -11,7 +12,9 @@
         hover
         class="text-center"
     ></v-rating>
+    </a>
     5 Sterren gebaseerd op 120 Google reviews!
+
   </div>
 
 </template>
