@@ -88,7 +88,7 @@ export default {
           { title: 'Contact', icon: 'mdi-map-marker',to:'/contact', },
       ],
 	  headerIcons: [
-		  { icon:'mdi-phone',link:'tel:0611263861'},
+		  { icon:'mdi-phone',link:'tel:+310611263861'},
 		  { icon:'mdi-whatsapp',link:'https://api.whatsapp.com/send?phone=0611263861'},
 		  { icon:'mdi-facebook',link:'https://www.facebook.com/Barbershop-De-Achterhoek-109519520965648'},
 		  { icon:'mdi-instagram',link:'https://www.instagram.com/barbershopdeachterhoek/?hl=nl'},
