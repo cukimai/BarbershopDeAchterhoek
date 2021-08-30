@@ -11,7 +11,7 @@
         hover
         class="text-center"
     ></v-rating>
-    5 Sterren gebaseerd op 110 Google reviews!
+    5 Sterren gebaseerd op 120 Google reviews!
   </div>
 
 </template>
