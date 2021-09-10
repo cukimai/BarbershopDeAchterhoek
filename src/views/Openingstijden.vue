@@ -1,7 +1,7 @@
 <template>
   <v-data-table
       :headers="headers"
-      :items="desserts"
+      :items="times"
       :items-per-page="5"
       :hide-default-footer="true"
       :disable-sort="true"
@@ -31,7 +31,7 @@ export default {
         { text: 'Zaterdag', value: 'zaterdag' },
         { text: 'Zondag', value: 'zondag' },
       ],
-      desserts: [
+      times: [
         {
           name: 'Barbershop de Achterhoek',
           maandag: '12:00 - 18:00',

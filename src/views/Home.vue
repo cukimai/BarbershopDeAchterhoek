@@ -24,7 +24,9 @@
         transition="fade-transition"
     >
 		</v-lazy>
-		<Footer></Footer>
+		<Footer>
+
+    </Footer>
 	</div>
 </template>
 
