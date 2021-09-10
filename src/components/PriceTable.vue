@@ -6,6 +6,8 @@
 				item-key="name"
 				class="elevation-1"
 				:custom-filter="filterOnlyCapsText"
+        :hide-default-footer="true"
+        :disable-sort="true"
 		>
 		</v-data-table>
 	</div>
