@@ -1,7 +1,6 @@
 <template>
 	<div>
     <v-lazy
-        v-model="isActive"
         :options="{
           threshold: .5
         }"
@@ -11,7 +10,6 @@
       <CarousselIntro></CarousselIntro>
 		</v-lazy>
     <v-lazy
-        v-model="isActive"
         :options="{
           threshold: .5
         }"
@@ -20,13 +18,11 @@
       <Stars></Stars>
 		</v-lazy>
 		<v-lazy
-        v-model="isActive"
         :options="{
           threshold: .5
         }"
         transition="fade-transition"
     >
-      <Popup></Popup>
 		</v-lazy>
 		<Footer></Footer>
 	</div>
@@ -43,7 +39,6 @@ export default {
     Footer,CarousselIntro,Stars
   },
     data: () => ({
-      isActive: false,
         colors: [
             'primary',
             'secondary',

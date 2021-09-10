@@ -15,6 +15,10 @@ const routes = [
         path: '/Prijzen',
         name: 'Prijzen',
         component: () => import('../views/Prijzen.vue')
+    },    {
+        path: '/Openingstijden',
+        name: 'Openingstijden',
+        component: () => import('../views/Openingstijden.vue')
     },
     {
         path: '/Fotos',

@@ -96,8 +96,9 @@ export default {
 	 drawer: null,
       items: [
           { title: 'Home', icon: 'mdi-view-dashboard',to:'/', },
+          { title: 'Openingstijden', icon: 'mdi-clock-time-eight-outline',to:'/openingstijden', },
           { title: 'Prijzen', icon: 'mdi-currency-eur',to:'/prijzen', },
-		  { title: 'Fotos', icon: 'mdi-camera',to:'/fotos', },
+		      { title: 'Fotos', icon: 'mdi-camera',to:'/fotos', },
           { title: 'Contact', icon: 'mdi-map-marker',to:'/contact', },
       ],
 	  headerIcons: [
