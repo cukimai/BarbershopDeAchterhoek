@@ -11,17 +11,12 @@
 			<v-card-text class="py-2 green lighten-1 white--text text-center">
 				{{ new Date().getFullYear() }} — <strong>Barbershopdeachterhoek.nl</strong>
 			</v-card-text>
-      <Openingstijden></Openingstijden>
 		</v-card>
 	</v-footer>
 </template>
 
 <script>
-import Openingstijden from "../views/Openingstijden";
     export default {
-      components: {
-        Openingstijden
-      },
         data: () => ({
 			headerIcons: [
 				{ icon:'mdi-phone',link:'tel:0611263861'},

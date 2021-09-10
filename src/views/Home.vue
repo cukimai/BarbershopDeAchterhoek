@@ -24,6 +24,7 @@
         transition="fade-transition"
     >
 		</v-lazy>
+    <Openingstijden></Openingstijden>
 		<Footer>
 
     </Footer>
@@ -34,11 +35,12 @@
 import Stars from "@/components/homepage/Stars";
 import CarousselIntro from "@/components/homepage/CarousselIntro.vue";
 import Footer from '@/components/Footer.vue'
+import Openingstijden from "./Openingstijden";
 
 export default {
   name: 'Home',
   components: {
-    Footer,CarousselIntro,Stars
+    Footer,CarousselIntro,Stars,Openingstijden
   },
     data: () => ({
         colors: [
