@@ -1,4 +1,7 @@
 <template>
+  <v-container>
+    <v-row>
+      <v-col>
   <v-data-table
       :headers="headers"
       :items="times"
@@ -7,6 +10,9 @@
       :disable-sort="true"
       class="elevation-1"
   ></v-data-table>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
