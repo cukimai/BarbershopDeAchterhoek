@@ -13,7 +13,7 @@
         class="text-center"
     ></v-rating>
     </a>
-    5 Sterren gebaseerd op 121 Google reviews!
+    5 Sterren gebaseerd op 122 Google reviews!
 
   </div>
 
