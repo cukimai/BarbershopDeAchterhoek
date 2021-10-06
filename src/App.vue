@@ -4,7 +4,7 @@
 			<v-list-item>
 				<v-list-item-content>
 					<v-list-item-title class="title">
-						Barbershopdeachterhoek.nl
+						Barbershopdeachterhoek.com
 					</v-list-item-title>
 				</v-list-item-content>
 			</v-list-item>
