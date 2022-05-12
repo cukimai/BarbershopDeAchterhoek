@@ -21,7 +21,7 @@
                 knippen: [
                     {
                         name: 'Knippen',
-                        prijs: 18,
+                        prijs: 20,
                     },
                     {
                         name: 'Knippen Zero Fade',
@@ -29,15 +29,15 @@
                     },
                     {
                         name: 'Knippen t/m 10 jaar',
-                        prijs: 15,
+                        prijs: 17,
                     },
                     {
                         name: 'Baard scheren',
-                        prijs: 12,
+                        prijs: 14,
                     },
                     {
                         name: 'Baard bewerken',
-                        prijs: 12,
+                        prijs: 14,
                     },
                     {
                         name: 'Contouren',
