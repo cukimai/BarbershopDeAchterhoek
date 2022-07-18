@@ -41,7 +41,7 @@
 				contain
 				dark
 				position="start"
-				src="http://0314media.nl/img/logo.webp"
+				src="@/assets/logo.webp"
 				width="100"
 		>
 		</v-img>
@@ -77,6 +77,9 @@
 			width: 135px;
 			height: 100px;
 		}
+    thead {
+      display: none;
+    }
 	}
 </style>
 <script>
