@@ -92,7 +92,14 @@ De site doet het technische deel (snelle statische HTML, schema.org `BarberShop`
 
 ## Deployen
 
-`npm run build` → upload de inhoud van `./out` naar de webhost (of koppel de repo aan Vercel/Netlify; build command `npm run build`, output `out`).
+Drie opties, alle drie op basis van `npm run build` → map `out/`:
+
+1. **GitHub Pages (ingebouwd).** Elke push naar `main` draait `.github/workflows/deploy.yml` en publiceert `out/` op GitHub Pages met domein `barbershopdeachterhoek.nl` (`public/CNAME`). Vereist: repo publiek óf GitHub Pro, en in *Settings → Pages* bron op "GitHub Actions". DNS bij de registrar:
+   - `A` records voor `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `CNAME` voor `www` → `cukimai.github.io`
+   - Daarna in *Settings → Pages* "Enforce HTTPS" aanzetten.
+2. **Vercel/Netlify.** Repo koppelen; build command `npm run build`, output directory `out`. Domein toevoegen in het dashboard en DNS volgens hun instructies.
+3. **Huidige webhost (FTP).** Inhoud van `out/` uploaden naar de webroot (vervang de oude WordPress-bestanden). Zorg dat de server `/pad/` naar `/pad/index.html` serveert (standaard bij Apache/Nginx).
 
 ## Afbeeldingen
 
