@@ -92,14 +92,18 @@ De site doet het technische deel (snelle statische HTML, schema.org `BarberShop`
 
 ## Deployen
 
-Drie opties, alle drie op basis van `npm run build` → map `out/`:
+**Live-situatie (sinds 30 oktober 2026):** de site draait op de Plesk-server van fusey.nl (`mail.fusey.nl:8443`), domein `barbershopdeachterhoek.nl`, document root `/site`. De oude WordPress-site staat onaangeroerd in `/httpdocs` (rollback = document root terugzetten op `httpdocs`). DNS loopt via Strato (ns3/ns4.stratoserver.net) en hoeft niet te wijzigen.
 
-1. **GitHub Pages (ingebouwd).** Elke push naar `main` draait `.github/workflows/deploy.yml` en publiceert `out/` op GitHub Pages met domein `barbershopdeachterhoek.nl` (`public/CNAME`). Vereist: repo publiek óf GitHub Pro, en in *Settings → Pages* bron op "GitHub Actions". DNS bij de registrar:
-   - `A` records voor `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `CNAME` voor `www` → `cukimai.github.io`
-   - Daarna in *Settings → Pages* "Enforce HTTPS" aanzetten.
-2. **Vercel/Netlify.** Repo koppelen; build command `npm run build`, output directory `out`. Domein toevoegen in het dashboard en DNS volgens hun instructies.
-3. **Huidige webhost (FTP).** Inhoud van `out/` uploaden naar de webroot (vervang de oude WordPress-bestanden). Zorg dat de server `/pad/` naar `/pad/index.html` serveert (standaard bij Apache/Nginx).
+**Nieuwe versie live zetten (3 stappen):**
+
+1. Push naar `main`. GitHub Actions (`.github/workflows/deploy.yml`) bouwt de site en publiceert `site.zip` in de release **latest**:
+   `https://github.com/cukimai/BarbershopDeAchterhoek/releases/download/latest/site.zip`
+2. Plesk → *Files* → map `site` → **+** → *Import file via URL* → plak bovenstaande URL.
+3. Vink `site.zip` aan → *Archive* → *Extract Files* → **Replace existing files** aan → OK. Verwijder daarna de zip.
+
+Handmatig alternatief: `npm run build` lokaal en de inhoud van `out/` uploaden naar `/site`.
+
+`public/.htaccess` regelt op Apache de 404-pagina, caching en compressie. Vervallen/verwijderde pagina's moeten handmatig uit `/site` worden gehaald (uitpakken verwijdert niets).
 
 ## Afbeeldingen
 

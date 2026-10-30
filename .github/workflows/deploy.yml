@@ -1,4 +1,9 @@
-name: Build en deploy naar GitHub Pages
+name: Build en publiceer site-zip
+
+# Elke push naar main bouwt de statische site en publiceert `site.zip` als
+# GitHub-release "latest". In Plesk haal je die zip op via
+# File Manager → /site → Import file via URL → Archive → Extract (replace).
+# Zie README → Deployen.
 
 on:
   push:
@@ -6,12 +11,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: build
   cancel-in-progress: true
 
 jobs:
@@ -32,18 +35,19 @@ jobs:
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
 
-      - uses: actions/configure-pages@v5
+      - name: Maak site.zip
+        run: |
+          rm -f out/CNAME out/.nojekyll
+          find out -name "*.txt" ! -name "robots.txt" -delete
+          (cd out && zip -qr ../site.zip .)
+          ls -la site.zip
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publiceer als release "latest"
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view latest --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create latest --repo "$GITHUB_REPOSITORY" --title "Laatste build" \
+                 --notes "Automatisch gebouwd vanaf main. Download site.zip en pak uit in /site op de webhost."
+          gh release upload latest site.zip --repo "$GITHUB_REPOSITORY" --clobber
+          gh release edit latest --repo "$GITHUB_REPOSITORY" --notes "Automatisch gebouwd vanaf main op $(date -u +'%Y-%m-%d %H:%M UTC') (commit ${GITHUB_SHA::7}). Download site.zip en pak uit in /site op de webhost."
