@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/fetch-instagram.mjs",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "npx serve out",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "instagram": "node scripts/fetch-instagram.mjs"
   },
   "dependencies": {
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "next": "16.4.3",
     "react": "19.3.0",
     "react-dom": "19.3.0"

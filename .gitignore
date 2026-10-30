@@ -39,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Instagram-feed wordt bij build opgehaald; afbeeldingen van fallback-posts blijven in git
+/public/instagram/feed.json
