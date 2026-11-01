@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* Merkkleuren — rechtstreeks uit het logo */
-  --color-brand: #00a850;
+  /* Merkkleuren. Het logo-groen (#00a850) is te licht voor witte tekst (contrast 3,1:1);
+     voor knoppen en tekst gebruiken we een diepere tint met ruim voldoende contrast (5,3:1). */
+  --color-brand: #007d3c;
   --color-brand-light: #78c040;
-  --color-brand-dark: #008a42;
+  --color-brand-dark: #00632f;
 
   --color-ink: #0a0a0a;
   --color-ink-soft: #1d1d1f;
@@ -102,19 +103,3 @@ body {
   display: none;
 }
 
-/* Embla carousel basis */
-.embla {
-  overflow: hidden;
-}
-
-.embla__container {
-  display: flex;
-  touch-action: pan-y pinch-zoom;
-  margin-left: calc(var(--slide-gap) * -1);
-}
-
-.embla__slide {
-  flex: 0 0 var(--slide-size);
-  min-width: 0;
-  padding-left: var(--slide-gap);
-}

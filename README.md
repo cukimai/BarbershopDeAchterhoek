@@ -53,6 +53,17 @@ Video toevoegen of wisselen:
 2. Sla een stilstaand beeld van de video op als `public/tiktok/<video-id>.jpg` (staand, ongeveer 3:4). Zonder thumbnail wordt de video automatisch overgeslagen.
 3. `npm run build`.
 
+## Prestaties (Lighthouse 100/100/100/100)
+
+De site scoort lokaal 100 op Prestaties, Toegankelijkheid, Best practices en SEO (mobiel én desktop). Zo blijft dat zo:
+
+- **Afbeeldingen** worden vooraf omgezet naar AVIF + WebP in meerdere breedtes door `scripts/optimize-images.mjs` (draait automatisch bij `npm run dev` en `npm run build`, los via `npm run images`). Het manifest `src/data/images.generated.json` en de varianten (`*-640.avif` enz.) staan in git. Nieuwe foto toevoegen = JPG/PNG in `public/images/` zetten, `npm run images` draaien en `<Picture src="/images/naam.jpg" ... sizes="..." />` gebruiken (`src/components/Picture.tsx`). De hero wordt met `<link rel="preload">` vooraf geladen.
+- **JavaScript laadt na de pagina**: `scripts/defer-scripts.mjs` (postbuild) verplaatst de Next.js-bundels naar een kleine lader die pas na `window.load` start. De pagina is daardoor eerst zichtbaar, daarna interactief (menu, "nu geopend", kaart). Client-componenten krijgen hun gegevens als props mee, zodat `site.ts` en het afbeeldingsmanifest niet in de browserbundel belanden.
+- **Google Maps** laadt pas na een klik op "Kaart tonen" (`MapEmbed`), TikTok pas na een klik op een video.
+- **Kleuren**: knoppen en tekst gebruiken `--color-brand` (#007d3c, contrast 5,3:1 op wit); het logo-groen (#00a850) is daarvoor te licht.
+- **Interne links** zijn gewone `<a>`-tags (geen `next/link`): de host bewaart geen RSC-payloads, dus client-side navigatie heeft hier geen nut.
+- Controleren: `npm run build && npm start` en in een tweede terminal `npm run lighthouse` (of PageSpeed Insights op de live site).
+
 ## Dynamische onderdelen
 
 - **Jaartal in de footer** en de **"Nu geopend"-badge** worden in de browser berekend; ze kloppen dus ook als de site lang niet opnieuw is gebouwd.
@@ -80,7 +91,8 @@ De site doet het technische deel (snelle statische HTML, schema.org `BarberShop`
 - Gestructureerde data `BarberShop` + `HairSalon` met openingstijden, adres, geo en diensten (`src/components/JsonLd.tsx`)
 - `sitemap.xml`, `robots.txt`, `manifest.webmanifest`
 - Eén `<h1>`, semantische secties, beschrijvende alt-teksten, `lang="nl"`
-- Hero-afbeelding met `fetchpriority="high"`, overige afbeeldingen lazy
+- Hero-afbeelding als AVIF met preload en `fetchpriority="high"`, overige afbeeldingen lazy en responsief
+- `Service`-schema en kruimelpad op elke landingspagina, `Offer`-prijzen in het bedrijfsschema
 
 **Na livegang:** claim het Google Bedrijfsprofiel, dien `https://barbershopdeachterhoek.nl/sitemap.xml` in bij Google Search Console en controleer de gestructureerde data met de [Rich Results Test](https://search.google.com/test/rich-results).
 
@@ -103,7 +115,7 @@ De site doet het technische deel (snelle statische HTML, schema.org `BarberShop`
 
 Handmatig alternatief: `npm run build` lokaal en de inhoud van `out/` uploaden naar `/site`.
 
-`public/.htaccess` regelt op Apache de 404-pagina, caching en compressie. Vervallen/verwijderde pagina's moeten handmatig uit `/site` worden gehaald (uitpakken verwijdert niets).
+`public/.htaccess` regelt op Apache de 404-pagina, caching, compressie (brotli/gzip), de MIME-types voor AVIF/WebP en de beveiligingsheaders (HSTS, X-Frame-Options, Permissions-Policy, COOP). Vervallen/verwijderde pagina's moeten handmatig uit `/site` worden gehaald (uitpakken verwijdert niets).
 
 ## Afbeeldingen
 
