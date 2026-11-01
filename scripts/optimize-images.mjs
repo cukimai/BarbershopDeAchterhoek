@@ -20,7 +20,7 @@ const MANIFEST_PATH = path.join(ROOT, "src", "data", "images.generated.json");
 /** Standaardbreedtes (sluiten aan op gangbare schermen en pixeldichtheden). */
 const DEFAULT_WIDTHS = [384, 640, 828, 1080, 1280, 1600, 1920];
 
-const AVIF_QUALITY = 50;
+const AVIF_QUALITY = 48;
 const WEBP_QUALITY = 74;
 
 /**
@@ -34,8 +34,13 @@ const SOURCES = [
 ];
 
 const OVERRIDES = {
-  "/images/hero.jpg": { widths: [828, 1080, 1280, 1600, 1920], upscaleTo: 1920 },
-  "/images/hero-mobile.jpg": { widths: [480, 640, 828, 900], avifQuality: 46 },
+  "/images/hero.jpg": { widths: [828, 1080, 1280, 1600, 1920], upscaleTo: 1920, avifQuality: 42 },
+    "/images/hero-mobile.jpg": { widths: [480, 640, 828, 900], avifQuality: 34 },
+  // Dienstkaarten liggen onder een donkere gradient; lagere kwaliteit valt niet op.
+  "/images/service-knippen.jpg": { avifQuality: 38 },
+  "/images/service-baard.jpg": { avifQuality: 38 },
+  "/images/service-vip.jpg": { avifQuality: 38 },
+  "/images/service-kinderen.jpg": { avifQuality: 38 },
   "/images/logo-black.png": { widths: [192, 384] },
   "/images/logo-white.png": { widths: [192, 384] },
 };
@@ -70,7 +75,7 @@ async function processFile(dir, file, source) {
   let generated = 0;
 
   for (const width of widths) {
-    const height = Math.round((sourceHeight * width) / sourceWidth);
+    const height = override.aspect ? Math.round(width / override.aspect) : Math.round((sourceHeight * width) / sourceWidth);
     for (const format of ["avif", "webp"]) {
       const outName = `${base}-${width}.${format}`;
       const outPath = path.join(PUBLIC_DIR, dir, outName);
@@ -80,12 +85,15 @@ async function processFile(dir, file, source) {
 
       let pipeline = sharp(absolute).resize({
         width,
+        height: override.aspect ? Math.round(width / override.aspect) : undefined,
+        fit: "cover",
+        position: "centre",
         withoutEnlargement: !override.upscaleTo,
         kernel: "lanczos3",
       });
       pipeline =
         format === "avif"
-          ? pipeline.avif({ quality: override.avifQuality ?? AVIF_QUALITY, effort: 6 })
+          ? pipeline.avif({ quality: override.avifQuality ?? AVIF_QUALITY, effort: 6, chromaSubsampling: "4:2:0" })
           : pipeline.webp({ quality: override.webpQuality ?? WEBP_QUALITY, effort: 5 });
       await pipeline.toFile(outPath);
       generated += 1;

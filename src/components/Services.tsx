@@ -22,7 +22,7 @@ export function Services() {
                   src={service.image}
                   alt={`${service.title} bij ${site.name}`}
                   fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, calc(100vw - 2.5rem)"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 88vw"
                   className="object-cover opacity-80 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.04] group-hover:opacity-90"
                 />
                 <div

@@ -33,7 +33,9 @@ function loader(urls) {
     "<script>(function(){" +
     `var s=${list};` +
     "function l(){for(var i=0;i<s.length;i++){var e=document.createElement('script');e.src=s[i];e.async=true;document.head.appendChild(e)}}" +
-    "if(document.readyState==='complete'){l()}else{window.addEventListener('load',l)}" +
+    // Na 'load' nog 300 ms wachten: de hero-afbeelding is dan gedecodeerd en geschilderd.
+    "function w(){setTimeout(l,300)}" +
+    "if(document.readyState==='complete'){w()}else{window.addEventListener('load',w)}" +
     "})();</script>"
   );
 }
