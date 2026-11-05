@@ -24,13 +24,13 @@ export type Service = {
 const phoneE164 = "+31611263861";
 
 const hours: OpeningHour[] = [
-  { day: 1, opens: "12:00", closes: "18:00" },
+  { day: 1, opens: "11:00", closes: "18:00" },
   { day: 2, opens: "09:00", closes: "18:00" },
   { day: 3, opens: "09:00", closes: "18:00" },
   { day: 4, opens: "09:00", closes: "20:00" },
   { day: 5, opens: "09:00", closes: "20:00" },
   { day: 6, opens: "09:00", closes: "19:00" },
-  { day: 0, opens: "13:00", closes: "18:00" },
+  { day: 0, opens: "11:00", closes: "18:00" },
 ];
 
 const services: Service[] = [
@@ -227,7 +227,7 @@ export const faq = [
   {
     question: "Zijn jullie ook op zondag open?",
     answer:
-      "Ja, we zijn zeven dagen per week open. Op zondag van 13:00 tot 18:00 uur, op donderdag en vrijdag zelfs tot 20:00 uur.",
+      "Ja, we zijn zeven dagen per week open. Op zondag van 11:00 tot 18:00 uur, op donderdag en vrijdag zelfs tot 20:00 uur.",
   },
   {
     question: "Knippen jullie ook kinderen?",

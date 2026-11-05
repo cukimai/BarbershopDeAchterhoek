@@ -140,10 +140,10 @@ export const landingPages: LandingPageContent[] = [
           "Kom binnen, meld je bij de balie en neem plaats. We werken op volgorde van binnenkomst, afgewisseld met gemaakte afspraken. In de zithoek kun je rustig wachten; meestal ben je binnen een kwartier aan de beurt.",
         ],
         bullets: [
-          "Maandag 12:00 – 18:00",
+          "Maandag 11:00 – 18:00",
           "Dinsdag en woensdag 09:00 – 18:00",
           "Donderdag en vrijdag 09:00 – 20:00",
-          "Zaterdag 09:00 – 19:00, zondag 13:00 – 18:00",
+          "Zaterdag 09:00 – 19:00, zondag 11:00 – 18:00",
         ],
       },
       {
