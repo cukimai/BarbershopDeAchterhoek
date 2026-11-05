@@ -16,7 +16,7 @@ export type Service = {
   title: string;
   description: string;
   image: string;
-  /** Laat leeg (undefined) om geen prijs te tonen. Bijvoorbeeld "€ 25". */
+  /** Laat leeg (undefined) om geen prijs te tonen. Bijvoorbeeld "€ 23". */
   price?: string;
   duration?: string;
 };
@@ -39,28 +39,28 @@ const services: Service[] = [
     title: "Knippen",
     description: "Knippen, föhnen en stylen. Van klassieke scheiding tot strakke skin fade, afgestemd op jouw stijl.",
     image: "/images/service-knippen.jpg",
-    price: "€ 28",
+    price: "€ 26",
   },
   {
     slug: "baard",
     title: "Baard bijwerken",
     description: "Strakke lijnen, de juiste lengte en een verzorgde afwerking. Of kies de hot towel shave voor € 30.",
     image: "/images/service-baard.jpg",
-    price: "€ 18",
+    price: "€ 17",
   },
   {
     slug: "vip",
     title: "VIP-behandeling",
     description: "Knippen, föhnen en stylen, neus en oren harsen én een gezichtsbehandeling. Alles in één keer goed.",
     image: "/images/service-vip.jpg",
-    price: "€ 75",
+    price: "€ 70",
   },
   {
     slug: "kinderen",
     title: "Kinderen t/m 10 jaar",
     description: "Knippen, föhnen en stylen voor de jongste klanten. Rustig, geduldig en net zo strak.",
     image: "/images/service-kinderen.jpg",
-    price: "€ 25",
+    price: "€ 23",
   },
 ];
 
@@ -68,23 +68,23 @@ const services: Service[] = [
 export type PriceItem = { title: string; detail?: string; price: string };
 
 const priceList: PriceItem[] = [
-  { title: "Knippen", detail: "Knippen, föhnen & stylen", price: "€ 28" },
-  { title: "Kinderen t/m 10 jaar", detail: "Knippen, föhnen & stylen", price: "€ 25" },
+  { title: "Knippen", detail: "Knippen, föhnen & stylen", price: "€ 26" },
+  { title: "Kinderen t/m 10 jaar", detail: "Knippen, föhnen & stylen", price: "€ 23" },
   {
     title: "VIP-behandeling",
     detail: "Knippen, föhnen, stylen, neus/oren harsen & gezichtsbehandeling",
-    price: "€ 75",
+    price: "€ 70",
   },
-  { title: "Baard bijwerken / scheren", price: "€ 18" },
+  { title: "Baard bijwerken / scheren", price: "€ 17" },
   { title: "Baard hot towel shave", price: "€ 30" },
-  { title: "Contouren", price: "€ 12" },
-  { title: "Wassen", price: "€ 6" },
-  { title: "Harsen neus, oren of wangen", detail: "Per behandeling", price: "€ 4" },
-  { title: "Gezichtsmasker met stoom", price: "€ 27" },
+  { title: "Contouren", price: "€ 10" },
+  { title: "Wassen", price: "€ 5" },
+  { title: "Harsen neus, oren of wangen", detail: "Per behandeling", price: "€ 3,50" },
+  { title: "Gezichtsmasker met stoom", price: "€ 26" },
 ];
 
 const priceNotes = {
-  surcharge: "Op zondag en feestdagen geldt een toeslag van € 4.",
+  surcharge: "Op zondag en feestdagen geldt een toeslag van € 3.",
   products:
     "Wij knippen het haar graag zonder gel, wax of andere producten. Zitten er producten in het haar? Dan wassen we het eerst en rekenen we hiervoor extra kosten.",
 };
@@ -95,7 +95,7 @@ export const site = {
   url: "https://barbershopdeachterhoek.nl",
   tagline: "Dé herenkapper van Doetinchem",
   description:
-    "Barbershop De Achterhoek is dé barbershop en herenkapper in Doetinchem. Knippen vanaf € 28, baard trimmen en hot towel shave. Met én zonder afspraak, 7 dagen per week open aan de Stationsstraat 28, naast het station.",
+    "Barbershop De Achterhoek is dé barbershop en herenkapper in Doetinchem. Knippen vanaf € 26, baard trimmen en hot towel shave. Met én zonder afspraak, 7 dagen per week open aan de Stationsstraat 28, naast het station.",
   keywords: [
     "barbershop Doetinchem",
     "herenkapper Doetinchem",
@@ -217,7 +217,7 @@ export const faq = [
   {
     question: "Wat kost knippen bij Barbershop De Achterhoek?",
     answer:
-      "Knippen inclusief föhnen en stylen kost € 28. Kinderen tot en met 10 jaar betalen € 25. Baard bijwerken of scheren is € 18 en de hot towel shave € 30. Op zondag en feestdagen geldt een toeslag van € 4.",
+      "Knippen inclusief föhnen en stylen kost € 26. Kinderen tot en met 10 jaar betalen € 23. Baard bijwerken of scheren is € 17 en de hot towel shave € 30. Op zondag en feestdagen geldt een toeslag van € 3.",
   },
   {
     question: "Waar zit de barbershop en kan ik parkeren?",
@@ -232,11 +232,11 @@ export const faq = [
   {
     question: "Knippen jullie ook kinderen?",
     answer:
-      "Zeker. Kinderen tot en met 10 jaar knippen we voor € 25, rustig en met geduld. Ook voor een eerste knipbeurt ben je welkom.",
+      "Zeker. Kinderen tot en met 10 jaar knippen we voor € 23, rustig en met geduld. Ook voor een eerste knipbeurt ben je welkom.",
   },
   {
     question: "Moet mijn haar schoon zijn voor het knippen?",
     answer:
-      "Het liefst knippen we haar zonder gel, wax of andere producten. Zit er product in je haar, dan wassen we het eerst (€ 6) zodat het resultaat strak wordt.",
+      "Het liefst knippen we haar zonder gel, wax of andere producten. Zit er product in je haar, dan wassen we het eerst (€ 5) zodat het resultaat strak wordt.",
   },
 ] as const;

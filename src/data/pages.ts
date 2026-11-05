@@ -30,7 +30,7 @@ export const landingPages: LandingPageContent[] = [
   {
     slug: "herenkapper-doetinchem",
     navLabel: "Herenkapper Doetinchem",
-    metaTitle: "Herenkapper Doetinchem | Knippen vanaf € 28",
+    metaTitle: "Herenkapper Doetinchem | Knippen vanaf € 26",
     metaDescription:
       "Op zoek naar een herenkapper in Doetinchem? Barbershop De Achterhoek knipt heren en jongens met oog voor detail: van klassiek tot skin fade. Zonder afspraak welkom, 7 dagen per week.",
     eyebrow: "Herenkapper in Doetinchem",
@@ -53,9 +53,9 @@ export const landingPages: LandingPageContent[] = [
           "We zitten centraal aan de Stationsstraat 28, op loopafstand van station Doetinchem en vlak bij het centrum. Ideaal om even binnen te lopen na je werk of in het weekend. We zijn zeven dagen per week open, donderdag en vrijdag zelfs tot 20:00 uur.",
         ],
         bullets: [
-          "Knippen, föhnen & stylen: € 28",
-          "Kinderen t/m 10 jaar: € 25",
-          "Contouren bijwerken tussendoor: € 12",
+          "Knippen, föhnen & stylen: € 26",
+          "Kinderen t/m 10 jaar: € 23",
+          "Contouren bijwerken tussendoor: € 10",
           "Met én zonder afspraak welkom",
         ],
       },
@@ -84,7 +84,7 @@ export const landingPages: LandingPageContent[] = [
     navLabel: "Barbier & baard",
     metaTitle: "Barbier Doetinchem | Baard trimmen & hot towel shave",
     metaDescription:
-      "Barbier in Doetinchem voor baard trimmen (€ 18), klassiek scheren met het mes en de hot towel shave (€ 30). Strakke lijnen en eerlijk advies bij Barbershop De Achterhoek.",
+      "Barbier in Doetinchem voor baard trimmen (€ 17), klassiek scheren met het mes en de hot towel shave (€ 30). Strakke lijnen en eerlijk advies bij Barbershop De Achterhoek.",
     eyebrow: "Barbier in Doetinchem",
     h1: "Baard trimmen en scheren zoals een barbier dat hoort te doen.",
     intro:
@@ -97,19 +97,19 @@ export const landingPages: LandingPageContent[] = [
         paragraphs: [
           "We brengen je baard op de juiste lengte, maken de contouren strak langs wangen en hals en werken de overgang naar je haar netjes af. Je krijgt advies over hoe je de vorm thuis bijhoudt en welke olie of balsem bij jouw baard past.",
         ],
-        bullets: ["Baard bijwerken of scheren: € 18", "Contouren: € 12", "Harsen neus, oren of wangen: € 4 per behandeling"],
+        bullets: ["Baard bijwerken of scheren: € 17", "Contouren: € 10", "Harsen neus, oren of wangen: € 3,50 per behandeling"],
       },
       {
         heading: "Hot towel shave",
         paragraphs: [
           "De klassieker. Warme handdoeken openen de poriën, daarna scheren we met het mes voor een gladde huid zonder irritatie. We sluiten af met een koele handdoek en verzorgende aftershave. Dertig minuten rust en een resultaat dat je met een gewoon scheermes niet haalt.",
         ],
-        bullets: ["Baard hot towel shave: € 30", "Gezichtsmasker met stoom: € 27"],
+        bullets: ["Baard hot towel shave: € 30", "Gezichtsmasker met stoom: € 26"],
       },
       {
         heading: "Haar én baard in één bezoek",
         paragraphs: [
-          "Combineer je knipbeurt met een baardbehandeling, dan zorgen we dat beide in balans zijn. Kies voor de VIP-behandeling (€ 75) en je krijgt knippen, föhnen, stylen, neus en oren harsen én een gezichtsbehandeling in één keer.",
+          "Combineer je knipbeurt met een baardbehandeling, dan zorgen we dat beide in balans zijn. Kies voor de VIP-behandeling (€ 70) en je krijgt knippen, föhnen, stylen, neus en oren harsen én een gezichtsbehandeling in één keer.",
         ],
       },
     ],
@@ -155,7 +155,7 @@ export const landingPages: LandingPageContent[] = [
       {
         heading: "Ook goed om te weten",
         paragraphs: [
-          "Op zondag en feestdagen rekenen we een toeslag van € 4. We knippen het liefst haar zonder gel of wax; zit er product in, dan wassen we het eerst (€ 6). Pinnen en contant betalen kan allebei.",
+          "Op zondag en feestdagen rekenen we een toeslag van € 3. We knippen het liefst haar zonder gel of wax; zit er product in, dan wassen we het eerst (€ 5). Pinnen en contant betalen kan allebei.",
         ],
       },
     ],
